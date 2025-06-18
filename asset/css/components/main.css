@@ -172,6 +172,7 @@ header,
 .user-dropdown {
     position: relative;
     display: inline-block;
+    padding-bottom: 5px; /* Create padding to help with hover */
 }
 
 .dropdown-btn {
@@ -207,26 +208,6 @@ header,
     display: none;
     position: absolute;
     right: 0;
-    background-color: white;
-    min-width: 180px;
-    box-shadow: var(--shadow-lg);
-    border-radius: var(--radius-md);
-    z-index: 101;
-    margin-top: var(--space-xs);
-    overflow: hidden;
-}
-
-/* Improved dropdown behavior with padding and transition delay */
-.user-dropdown {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 5px; /* Create padding to help with hover */
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
     top: calc(100% - 5px); /* Adjust for the padding */
     background-color: white;
     min-width: 180px;
@@ -234,20 +215,19 @@ header,
     border-radius: var(--radius-md);
     z-index: 101;
     overflow: hidden;
-    transition: opacity 0.3s, visibility 0s 0.3s;
     opacity: 0;
     visibility: hidden;
+    transition: opacity 0.3s, transform 0.3s;
 }
 
 .user-dropdown:hover .dropdown-content {
     display: block;
-    animation: fadeIn 0.2s ease-out;
     opacity: 1;
     visibility: visible;
-    transition-delay: 0s;
+    animation: fadeIn 0.2s ease-out;
 }
 
-/* Add invisible area to prevent accidental hover loss */
+/* Add invisible bridge area to prevent accidental hover loss */
 .dropdown-content::before {
     content: '';
     position: absolute;
@@ -255,6 +235,24 @@ header,
     left: 0;
     right: 0;
     height: 10px;
+}
+
+/* Make the dropdown stay visible for a moment after hover is lost */
+.user-dropdown .dropdown-content {
+    pointer-events: none;
+}
+
+.user-dropdown:hover .dropdown-content {
+    pointer-events: all;
+}
+
+/* Apply a slight delay before hiding */
+.user-dropdown .dropdown-content {
+    transition-delay: 0.2s;
+}
+
+.user-dropdown:hover .dropdown-content {
+    transition-delay: 0s;
 }
 
 @keyframes fadeIn {
