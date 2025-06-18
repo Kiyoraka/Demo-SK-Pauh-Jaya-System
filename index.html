@@ -469,7 +469,7 @@
     <!-- Login Modal -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <span class="close" id="closeLoginBtn">&times;</span>
             <h2>Login</h2>
             <form id="loginForm">
                 <div class="form-group">
@@ -521,7 +521,7 @@
     </div>
 
     <!-- Overlay for modals -->
-    <div id="overlay" class="modal" style="background: rgba(0,0,0,0.5);"></div>
+    <div id="overlay" class="modal" style="background: rgba(0,0,0,0.5); z-index: 999;"></div>
 
     <script src="asset/js/script.js"></script>
 </body>
