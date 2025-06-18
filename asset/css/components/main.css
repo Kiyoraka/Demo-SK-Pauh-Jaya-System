@@ -140,7 +140,8 @@ body {
 }
 
 /* Modern Header */
-header {
+header, 
+.dashboard-header-nav {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
     padding: var(--space-lg) 0;
@@ -240,6 +241,21 @@ header {
 }
 
 /* Dashboard header user info */
+.dashboard-header-nav .user-dropdown .dropdown-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-weight: 500;
+}
+
+.dashboard-header-nav .user-dropdown:hover .dropdown-btn {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.dashboard-header-nav .user-dropdown .dropdown-content {
+    top: 100%;
+    right: 0;
+}
+
 .dashboard-header .user-dropdown .dropdown-btn {
     background: var(--gray-100);
     color: var(--gray-700);
@@ -262,6 +278,21 @@ header {
 
 #parentDashboard .dashboard-header .user-dropdown:hover .dropdown-btn {
     background: rgba(74, 222, 128, 0.2);
+}
+
+/* Dashboard header nav specific styles */
+.dashboard-header-nav {
+    width: 100%;
+    position: fixed;
+    z-index: 200;
+}
+
+.dashboard-header-nav .logo {
+    margin-right: auto;
+}
+
+.dashboard-header-nav .nav-links {
+    margin-left: auto;
 }
 
 .change-password-link:before {
