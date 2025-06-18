@@ -71,7 +71,7 @@ function handleLogin(e) {
         showDashboard('admin');
         closeLoginModal();
     } else if (email === 'parent@gmail.com' && password === 'admin123') {
-        currentUser = { email, role: 'parent', name: 'Jennifer Johnson' };
+        currentUser = { email, role: 'parent', name: 'Siti Norazlina' };
         showDashboard('parent');
         closeLoginModal();
     } else {
