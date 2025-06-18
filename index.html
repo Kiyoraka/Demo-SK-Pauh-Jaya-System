@@ -89,6 +89,24 @@
 
     <!-- Admin Dashboard -->
     <div id="adminDashboard" class="dashboard">
+        <!-- Admin Dashboard Header -->
+        <header class="dashboard-header-nav">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">SK Pauh Jaya</div>
+                    <nav class="nav-links">
+                        <div class="user-dropdown">
+                            <button class="dropdown-btn">Administrator</button>
+                            <div class="dropdown-content">
+                                <a href="#" class="change-password-link">Change Password</a>
+                                <a href="#" onclick="logout()">Logout</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        
         <aside class="sidebar">
             <ul class="sidebar-menu">
                 <li><a href="#" data-section="admin-main" class="sidebar-link active">Dashboard</a></li>
@@ -101,13 +119,6 @@
         <main class="dashboard-content">
             <div class="dashboard-header">
                 <h1 id="dashboardTitle">Admin Dashboard</h1>
-                <div class="user-dropdown">
-                    <button class="dropdown-btn">Administrator</button>
-                    <div class="dropdown-content">
-                        <a href="#" class="change-password-link">Change Password</a>
-                        <a href="#" onclick="logout()">Logout</a>
-                    </div>
-                </div>
             </div>
 
             <!-- Admin Main Section -->
@@ -302,6 +313,24 @@
 
     <!-- Parent Dashboard -->
     <div id="parentDashboard" class="dashboard parent-dashboard">
+        <!-- Parent Dashboard Header -->
+        <header class="dashboard-header-nav">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">SK Pauh Jaya</div>
+                    <nav class="nav-links">
+                        <div class="user-dropdown">
+                            <button class="dropdown-btn" id="parentUserInfo">Siti Norazlina</button>
+                            <div class="dropdown-content">
+                                <a href="#" class="change-password-link">Change Password</a>
+                                <a href="#" onclick="logout()">Logout</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        
         <aside class="sidebar parent-sidebar">
             <ul class="sidebar-menu">
                 <li><a href="#" data-section="parent-main" class="parent-sidebar-link active">Dashboard</a></li>
@@ -314,13 +343,6 @@
         <main class="dashboard-content">
             <div class="dashboard-header">
                 <h1 id="parentDashboardTitle">Parent Dashboard</h1>
-                <div class="user-dropdown">
-                    <button class="dropdown-btn" id="parentUserInfo">Siti Norazlina</button>
-                    <div class="dropdown-content">
-                        <a href="#" class="change-password-link">Change Password</a>
-                        <a href="#" onclick="logout()">Logout</a>
-                    </div>
-                </div>
             </div>
 
             <!-- Parent Main Section -->
