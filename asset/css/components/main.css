@@ -164,6 +164,110 @@ header {
     background-clip: text;
     color: transparent;
     letter-spacing: -0.5px;
+    margin-right: auto; /* Push logo to left */
+}
+
+/* User dropdown styling */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: var(--space-xs) var(--space-md);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: all var(--transition-fast);
+}
+
+.dropdown-btn::after {
+    content: '▼';
+    font-size: 0.7em;
+    margin-left: var(--space-sm);
+    transition: transform var(--transition-fast);
+}
+
+.dropdown-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.user-dropdown:hover .dropdown-btn::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--radius-md);
+    z-index: 101;
+    margin-top: var(--space-xs);
+    overflow: hidden;
+}
+
+.user-dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-content a {
+    color: var(--gray-700) !important;
+    padding: var(--space-md) var(--space-lg);
+    text-decoration: none;
+    display: block;
+    transition: all var(--transition-fast);
+    font-weight: 500;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--gray-100);
+    color: var(--primary) !important;
+}
+
+/* Dashboard header user info */
+.dashboard-header .user-dropdown .dropdown-btn {
+    background: var(--gray-100);
+    color: var(--gray-700);
+    font-weight: 600;
+}
+
+.dashboard-header .user-dropdown:hover .dropdown-btn {
+    background: var(--gray-200);
+}
+
+.dashboard-header .user-dropdown .dropdown-content {
+    top: 100%;
+    right: 0;
+}
+
+#parentDashboard .dashboard-header .user-dropdown .dropdown-btn {
+    background: rgba(74, 222, 128, 0.1);
+    color: var(--success);
+}
+
+#parentDashboard .dashboard-header .user-dropdown:hover .dropdown-btn {
+    background: rgba(74, 222, 128, 0.2);
+}
+
+.change-password-link:before {
+    content: '🔒';
+    margin-right: var(--space-sm);
+    font-size: 0.9em;
 }
 
 .nav-links {
