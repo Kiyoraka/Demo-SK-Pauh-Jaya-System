@@ -13,10 +13,14 @@
             <div class="header-content">
                 <div class="logo">SK Pauh Jaya</div>
                 <nav class="nav-links">
-                    <a href="#" id="homeLink">Home</a>
                     <a href="#" id="loginBtn">Login</a>
                     <a href="#" id="logoutBtn" class="hidden">Logout</a>
-                    <span id="userInfo" class="hidden"></span>
+                    <div class="user-dropdown hidden" id="userDropdown">
+                        <button class="dropdown-btn" id="userInfo"></button>
+                        <div class="dropdown-content">
+                            <a href="#" id="changePasswordBtn">Change Password</a>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </div>
@@ -96,8 +100,11 @@
         <main class="dashboard-content">
             <div class="dashboard-header">
                 <h1 id="dashboardTitle">Admin Dashboard</h1>
-                <div>
-                    <span>Welcome, Administrator</span>
+                <div class="user-dropdown">
+                    <button class="dropdown-btn">Administrator</button>
+                    <div class="dropdown-content">
+                        <a href="#" class="change-password-link">Change Password</a>
+                    </div>
                 </div>
             </div>
 
@@ -305,8 +312,11 @@
         <main class="dashboard-content">
             <div class="dashboard-header">
                 <h1 id="parentDashboardTitle">Parent Dashboard</h1>
-                <div>
-                    <span>Welcome, Parent</span>
+                <div class="user-dropdown">
+                    <button class="dropdown-btn" id="parentUserInfo">Siti Norazlina</button>
+                    <div class="dropdown-content">
+                        <a href="#" class="change-password-link">Change Password</a>
+                    </div>
                 </div>
             </div>
 
