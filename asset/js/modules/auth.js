@@ -14,6 +14,15 @@ function showLoginModal() {
         document.getElementById('email').focus();
     }, 100);
     
+    // Set up the close button event listener
+    const closeBtn = document.getElementById('closeLoginBtn');
+    if (closeBtn) {
+        closeBtn.onclick = function(e) {
+            e.stopPropagation();
+            closeLoginModal();
+        };
+    }
+    
     // Prevent form interactions from closing the modal
     const form = document.getElementById('loginForm');
     if (form) {
