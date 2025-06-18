@@ -2,69 +2,184 @@
 
 /* Parent dashboard base */
 .parent-dashboard {
-    background: #f8f9fa;
+    background-color: var(--gray-100);
+    position: relative;
 }
 
 /* Parent sidebar customization */
 .parent-sidebar {
-    background: #28a745;
+    background: linear-gradient(to bottom, var(--success), #219653);
+    position: relative;
+}
+
+.parent-sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--secondary), var(--info));
+}
+
+.parent-sidebar-link {
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .parent-sidebar a:hover, .parent-sidebar a.active {
-    background: #1e7e34;
-    border-left-color: #ffc107;
+    background: rgba(255, 255, 255, 0.1);
+    color: white !important;
+    border-left-color: var(--info);
 }
 
-/* Profile section layout */
+.parent-sidebar a::before {
+    color: var(--info);
+}
+
+/* Profile section layout with modern cards */
 .profile-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: var(--space-xl);
 }
 
 .profile-card {
     background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-200);
+    transition: all var(--transition-normal);
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
 .profile-card h3 {
-    color: #28a745;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #e9ecef;
-    padding-bottom: 0.5rem;
+    color: var(--success);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--gray-200);
+    font-weight: 600;
+    position: relative;
 }
 
-/* Children list styles */
+.profile-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--success);
+}
+
+/* Children list styles with modern design */
 .children-list {
     list-style: none;
 }
 
 .children-list li {
-    padding: 1rem;
-    background: #f8f9fa;
-    margin-bottom: 0.5rem;
-    border-radius: 5px;
-    border-left: 4px solid #28a745;
+    padding: var(--space-lg);
+    background: var(--gray-100);
+    margin-bottom: var(--space-md);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--success);
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Payment popup styling */
+.children-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, transparent 70%, rgba(74, 222, 128, 0.2) 100%);
+    border-radius: 0 0 0 100%;
+}
+
+.children-list li:hover {
+    transform: translateX(5px);
+    background: white;
+    box-shadow: var(--shadow-md);
+}
+
+.children-list li strong {
+    color: var(--gray-900);
+    font-weight: 600;
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-size: 1.05rem;
+}
+
+/* Payment popup styling with modern UI */
 .payment-popup {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
     z-index: 1001;
     display: none;
     width: 90%;
     max-width: 500px;
+    border: 1px solid var(--gray-200);
+    animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+    from {
+        transform: translate(-50%, -50%) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.payment-popup h3 {
+    color: var(--gray-900);
+    margin-bottom: var(--space-lg);
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--gray-200);
 }
 
 .payment-popup.active {
     display: block;
+}
+
+/* Parent-specific dashboard elements */
+.dashboard-header #parentDashboardTitle {
+    background: linear-gradient(to right, var(--gray-900), var(--success));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Parent specific data tables */
+#parent-main .data-table th,
+#parent-reports .data-table th,
+#parent-payments .data-table th {
+    background: rgba(74, 222, 128, 0.1);
+    color: var(--gray-800);
+}
+
+/* Parent dashboard section styling */
+#parent-main.dashboard-section h3::after,
+#parent-reports.dashboard-section h3::after,
+#parent-payments.dashboard-section h3::after,
+#parent-profile.dashboard-section h3::after {
+    background: var(--success);
 }
