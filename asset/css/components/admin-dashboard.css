@@ -1,0 +1,99 @@
+/* admin-dashboard.css - Administrative interface styling */
+
+/* Dashboard base layout */
+.dashboard {
+    display: none;
+    min-height: calc(100vh - 70px);
+}
+
+.dashboard.active {
+    display: flex;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background: #343a40;
+    color: white;
+    padding: 2rem 0;
+}
+
+.sidebar-menu {
+    list-style: none;
+}
+
+.sidebar-menu li {
+    border-bottom: 1px solid #495057;
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 1rem 2rem;
+    color: #adb5bd;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.sidebar-menu a:hover, .sidebar-menu a.active {
+    background: #495057;
+    color: white;
+    border-left: 4px solid #667eea;
+}
+
+/* Dashboard content area */
+.dashboard-content {
+    flex: 1;
+    padding: 2rem;
+    background: #f8f9fa;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.dashboard-header h1 {
+    color: #343a40;
+}
+
+/* Dashboard sections */
+.dashboard-section {
+    display: none;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dashboard-section.active {
+    display: block;
+}
+
+/* Statistics display */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    opacity: 0.9;
+}
