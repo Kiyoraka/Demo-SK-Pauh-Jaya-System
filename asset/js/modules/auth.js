@@ -2,17 +2,57 @@
 
 // Authentication functions
 function showLoginModal() {
-    document.getElementById('loginModal').style.display = 'block';
-    document.getElementById('overlay').style.display = 'block';
+    const loginModal = document.getElementById('loginModal');
+    const overlay = document.getElementById('overlay');
+    
+    // Show the modal and overlay
+    loginModal.style.display = 'block';
+    overlay.style.display = 'block';
+    
+    // Focus on the email input for better UX
+    setTimeout(() => {
+        document.getElementById('email').focus();
+    }, 100);
+    
+    // Prevent form interactions from closing the modal
+    const form = document.getElementById('loginForm');
+    if (form) {
+        // Remove any existing listeners to avoid duplicates
+        const newForm = form.cloneNode(true);
+        form.parentNode.replaceChild(newForm, form);
+        
+        // Add the submit event listener
+        newForm.addEventListener('submit', handleLogin);
+        
+        // Stop propagation for all form elements
+        const formElements = newForm.querySelectorAll('input, button, select, textarea');
+        formElements.forEach(element => {
+            element.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
+    }
 }
 
 function closeLoginModal() {
-    document.getElementById('loginModal').style.display = 'none';
-    document.getElementById('overlay').style.display = 'none';
+    const loginModal = document.getElementById('loginModal');
+    const overlay = document.getElementById('overlay');
+    
+    // Hide the modal and overlay
+    loginModal.style.display = 'none';
+    overlay.style.display = 'none';
+    
+    // Clear form fields
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    if (email) email.value = '';
+    if (password) password.value = '';
 }
 
 function handleLogin(e) {
     e.preventDefault();
+    e.stopPropagation(); // Prevent event from bubbling up to modal
+    
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
