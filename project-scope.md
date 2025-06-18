@@ -144,37 +144,50 @@
 #### Frontend Structure
 ```
 Sunshine Academy Website
-├── HTML Structure (Single Page)
+├── HTML Structure (index.html)
 ├── CSS Organization
-│   ├── Main Styles (Global)
-│   ├── Component Styles (Buttons, Forms)
-│   ├── Layout Styles (Dashboard, Navigation)
-│   └── Responsive Styles (Mobile, Tablet)
+│   ├── style.css (Main entry point)
+│   └── components/
+│       ├── main.css (Global styles)
+│       ├── admin-dashboard.css (Admin interface)
+│       ├── parent-dashboard.css (Parent portal)
+│       └── responsive.css (Mobile adaptations)
 └── JavaScript Modules
-    ├── Authentication System
-    ├── Dashboard Management
-    ├── Form Handling
-    ├── Modal Management
-    └── Utility Functions
+    ├── script.js (Main entry point)
+    └── modules/
+        ├── main.js (Application initialization)
+        ├── auth.js (Authentication system)
+        ├── admin-dashboard.js (Admin features)
+        ├── parent-dashboard.js (Parent features)
+        ├── site-management.js (Content management)
+        ├── reports.js (Report handling)
+        ├── payments.js (Payment processing)
+        └── utils.js (Utility functions)
 ```
+
+![Project Structure](images/project-structure.png)
 
 #### Component Breakdown
 
 **CSS Components:**
-- `main.css` - Base styles and global components
-- `admin-dashboard.css` - Administrative interface styling
-- `parent-dashboard.css` - Parent portal styling
-- `responsive.css` - Mobile and tablet adaptations
+- `main.css` - Base styles and global components including layout, buttons, forms, header, hero banner, content cards, modals, and utility classes.
+- `admin-dashboard.css` - Administrative interface styling including sidebar, dashboard content, statistics cards, and section layouts.
+- `parent-dashboard.css` - Parent portal styling including profile cards, children lists, and payment popup.
+- `responsive.css` - Mobile and tablet adaptations for all components with specific breakpoints at 768px and 480px.
+
+![CSS Components](images/css-components.png)
 
 **JavaScript Modules:**
-- `main.js` - Application initialization
-- `auth.js` - Authentication and user management
-- `admin-dashboard.js` - Administrative functionality
-- `parent-dashboard.js` - Parent portal features
-- `site-management.js` - Content management system
-- `reports.js` - Report handling system
-- `payments.js` - Payment processing interface
-- `utils.js` - Utility functions and helpers
+- `main.js` - Application initialization with event listeners and global state management.
+- `auth.js` - Authentication and user management including login, logout, and session handling.
+- `admin-dashboard.js` - Administrative functionality for dashboard navigation and section display.
+- `parent-dashboard.js` - Parent portal features including profile management and children handling.
+- `site-management.js` - Content management system for banner, activities, and programs.
+- `reports.js` - Report handling system with status updates and viewing.
+- `payments.js` - Payment processing interface with popup management and status tracking.
+- `utils.js` - Utility functions and helpers including date formatting, modal management, and form validation.
+
+![JavaScript Modules](images/js-modules.png)
 
 ### Data Models
 
