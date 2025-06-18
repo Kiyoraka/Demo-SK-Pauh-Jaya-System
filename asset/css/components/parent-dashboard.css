@@ -1,0 +1,70 @@
+/* parent-dashboard.css - Parent portal styling */
+
+/* Parent dashboard base */
+.parent-dashboard {
+    background: #f8f9fa;
+}
+
+/* Parent sidebar customization */
+.parent-sidebar {
+    background: #28a745;
+}
+
+.parent-sidebar a:hover, .parent-sidebar a.active {
+    background: #1e7e34;
+    border-left-color: #ffc107;
+}
+
+/* Profile section layout */
+.profile-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.profile-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.profile-card h3 {
+    color: #28a745;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+/* Children list styles */
+.children-list {
+    list-style: none;
+}
+
+.children-list li {
+    padding: 1rem;
+    background: #f8f9fa;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    border-left: 4px solid #28a745;
+}
+
+/* Payment popup styling */
+.payment-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 1001;
+    display: none;
+    width: 90%;
+    max-width: 500px;
+}
+
+.payment-popup.active {
+    display: block;
+}
