@@ -16,12 +16,27 @@ function closeAllModals() {
     closePaymentPopup();
 }
 
+// Add event listeners to prevent clicks inside modal content from closing the modal
+document.addEventListener('DOMContentLoaded', function() {
+    // Stop propagation of clicks inside modal content
+    const modalContents = document.querySelectorAll('.modal-content, .payment-popup');
+    modalContents.forEach(content => {
+        content.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    });
+});
+
 // Window event listeners for closing modals when clicking outside
 window.onclick = function(event) {
     const loginModal = document.getElementById('loginModal');
     const overlay = document.getElementById('overlay');
+    const paymentPopup = document.getElementById('paymentPopup');
     
-    if (event.target === loginModal || event.target === overlay) {
+    // Only close if clicking directly on the modal background or overlay, not on modal content
+    if ((event.target === loginModal || event.target === overlay || event.target === paymentPopup) && 
+        !event.target.closest('.modal-content') && 
+        !event.target.closest('.payment-popup')) {
         closeAllModals();
     }
 };
